@@ -2,12 +2,25 @@ fetch('./words.json')
     .then((response) => response.json())
     .then((json) => console.log(json));
 let guessform = document.getElementById("formguess");
-const testword = "";
-void function guessget()
+var testword = "ohno";
+var guesscount = 1;
+function guessget()
 {
-    testword = document.getElementById("Guess");
-    console.log(testword);
-}
-
-const wordletters = testword.split("");
-console.log(wordletters[4]);
+    testword = document.getElementById("Guess").value;
+    const wordletters = testword.split("");
+    if (guesscount != 5)
+    {
+        var displayguess = document.getElementById("guess" + guesscount)
+        wordletters.forEach(element => {
+            const letter = document.createElement("li");
+            const textnode = document.createTextNode(element);
+            letter.appendChild(textnode);
+            displayguess.appendChild(letter);
+        });
+        guesscount += 1;
+    }
+    else
+    {
+        document.getElementById("gridtitle").value = "game over";
+    }
+}   
