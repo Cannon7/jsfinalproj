@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cannon's Wordle</title>
     <script src="wordle.js"></script>
+    <link rel="stylesheet" href="index.css">
 
 </head>
 <body>
     <p id="ln1"></p>
     <form action='' id="formguess">Guess
         <input type="text" maxlength="5" minlength="5" id="Guess">
-        <input type="submit" value="Submit">
+        <button type="submit" onclick="guessget()">submit</button>
     </form>
     <h2 id="gridforguess">
         <p id="gridtitle">WORDL</p>
